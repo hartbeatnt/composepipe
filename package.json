@@ -1,5 +1,5 @@
 {
-  "name": "00PRESENTATIONBOILERPLATE",
+  "name": "00presentationboilerplate",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -7,12 +7,34 @@
   },
   "dependencies": {
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-konva": "^1.1.1",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hartbeatnt/00PRESENTATIONBOILERPLATE.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "slideshow",
+    "presentation",
+    "boilerplate"
+  ],
+  "author": "n8sh4rk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hartbeatnt/00PRESENTATIONBOILERPLATE/issues"
+  },
+  "homepage": "https://github.com/hartbeatnt/00PRESENTATIONBOILERPLATE#readme"
 }

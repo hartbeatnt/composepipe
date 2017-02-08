@@ -30,7 +30,7 @@ class App extends Component {
     let currentSlide = store.getState().slide.number;
     if (e.keyCode == 37 && currentSlide > 0) 
       store.dispatch({type: actions.PREV_SLIDE});
-    if (e.keyCode == 39 && currentSlide < Object.keys(slides).length-2) 
+    if (e.keyCode == 39 && currentSlide <= Object.keys(slides).length-2) 
       store.dispatch({type: actions.NEXT_SLIDE});
   }
 

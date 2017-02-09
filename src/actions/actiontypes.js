@@ -1,2 +1,3 @@
-export const NEXT_SLIDE = 'NEXT_SLIDE'
-export const PREV_SLIDE = 'PREV_SLIDE'
+export const NEXT_TICK = 'NEXT_TICK'
+export const PREV_TICK = 'PREV_TICK'
+export const RESET_TICK = 'RESET_TICK'

@@ -27,21 +27,21 @@ class App extends Component {
   }
 
   keyDownHandler(e) {
-    let currentSlide = store.getState().slide.number;
+    let currentSlide = store.getState().slide.tick;
     if (e.keyCode == 37 && currentSlide > 0) 
-      store.dispatch({type: actions.PREV_SLIDE});
+      store.dispatch({type: actions.PREV_TICK});
     if (e.keyCode == 39 && currentSlide <= Object.keys(slides).length-2) 
-      store.dispatch({type: actions.NEXT_SLIDE});
+      store.dispatch({type: actions.NEXT_TICK});
   }
 
   updateDimensions(){
     this.setState({width: window.innerWidth-10, height: window.innerHeight-100})
-    console.log(this.state)
+    console.log('window resize',this.state)
   }
 
   render() {
-    let CurrentSlide = slides[`Slide${this.props.slide.number}`] ?
-      slides[`Slide${this.props.slide.number}`] :
+    let CurrentSlide = slides[`Slide${this.props.slide.tick}`] ?
+      slides[`Slide${this.props.slide.tick}`] :
       slides.finalSlide
     return (
       <div className="App">

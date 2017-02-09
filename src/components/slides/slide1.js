@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import store from '../../store/store.config';
 import * as actions from '../../actions/actiontypes';
+import {Stage, Layer, Image} from 'react-konva';
 
 class Slide1 extends Component {
   constructor(props) {
@@ -9,10 +10,20 @@ class Slide1 extends Component {
     this.state = {
       nextSlide: 'Slide1',
       prevSlide: 'Slide0',
-      tickCount: 1
+      tickCount: 1,
+      image: null
     }
   }
-  componentWillReceiveProps(nextProps){
+  componentDidMount() {
+    const image = new window.Image();
+    image.src = 'http://img.pandawhale.com/post-22104-Tony-Hawk-assist-skateboard-gi-W5dt.gif';
+    image.onload = () => {
+      this.setState({
+        image: image
+      });
+    }
+  }
+  componentWillReceiveProps(nextProps) {
     if (nextProps.slide.tick > this.state.tickCount) {
       store.dispatch({
         type: actions.SET_SLIDE, 
@@ -30,18 +41,11 @@ class Slide1 extends Component {
   }
   render(){
     return (
-      <div className='title slide slide0'>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-      
-        <h1>Presentation<br />Turtle</h1>
-      </div>
+      <Stage width={this.props.width} height={this.props.height}>
+        <Layer>
+          <Image />
+        </Layer>
+      </Stage>
     )
   }
 }

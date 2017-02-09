@@ -9,7 +9,7 @@ class Slide0 extends Component {
     this.state = {
       nextSlide: 'Slide1',
       prevSlide: 'Slide0',
-      tickCount: 1
+      tickCount: 0
     }
   }
   componentWillReceiveProps(nextProps){
@@ -27,6 +27,7 @@ class Slide0 extends Component {
         tick: 0
       })
     }
+
   }
   render(){
     return (
@@ -40,7 +41,7 @@ class Slide0 extends Component {
         <br />
         <br />
       
-        <h1>Presentation<br />Title</h1>
+        <h1>Compose<br />& Pipe</h1>
       </div>
     )
   }

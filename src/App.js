@@ -43,7 +43,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Function Bind</h2>
+          <h2>Compose and Pipe</h2>
         </div>
         <CurrentSlide width={this.state.width} height={this.state.height}/>
       </div>

@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 import store from '../../store/store.config';
 import * as actions from '../../actions/actiontypes';
 import {Stage, Layer, Text} from 'react-konva';
-import { slide1text } from './slidetext/slidetext'
+import { slide2text } from './slidetext/slidetext'
 
-class Slide1 extends Component {
+class Slide2 extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      nextSlide: 'Slide2',
-      prevSlide: 'Slide0',
-      tickCount: slide1text.length-1
+      nextSlide: 'Slide3',
+      prevSlide: 'Slide1',
+      tickCount: slide2text.length-1
     }
   }
   componentWillReceiveProps(nextProps){
@@ -35,8 +35,8 @@ class Slide1 extends Component {
       <Stage width={this.props.width} height={this.props.height}>
         <Layer>
           <Text 
-            text={slide1text[this.props.slide.tick]}
-            x={this.props.width*(1/2)-350} y={this.props.height/2-200}
+            text={slide2text[this.props.slide.tick]}
+            x={this.props.width*(1/2)-350} y={this.props.height/2-60}
             fontSize='28' fontFamily='courier' align='left'
           />
         </Layer>
@@ -51,4 +51,4 @@ function mapStateToProps(state, props) {
   }
 }
 
-export default connect(mapStateToProps)(Slide1)
+export default connect(mapStateToProps)(Slide2)

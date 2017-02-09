@@ -28,21 +28,18 @@ class App extends Component {
 
   keyDownHandler(e) {
     let currentSlide = store.getState().slide.tick;
-    if (e.keyCode == 37 && currentSlide > 0) 
+    if (e.keyCode == 37) 
       store.dispatch({type: actions.PREV_TICK});
-    if (e.keyCode == 39 && currentSlide <= Object.keys(slides).length-2) 
+    if (e.keyCode == 39) 
       store.dispatch({type: actions.NEXT_TICK});
   }
 
   updateDimensions(){
     this.setState({width: window.innerWidth-10, height: window.innerHeight-100})
-    console.log('window resize',this.state)
   }
 
   render() {
-    let CurrentSlide = slides[`Slide${this.props.slide.tick}`] ?
-      slides[`Slide${this.props.slide.tick}`] :
-      slides.finalSlide
+    let CurrentSlide = slides[this.props.slide.slide]
     return (
       <div className="App">
         <div className="App-header">

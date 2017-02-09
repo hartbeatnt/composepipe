@@ -1,7 +1,8 @@
 import * as actions from '../actions/actiontypes'
 
 const defaultState = {
-  tick: 0
+  tick: 0,
+  slide: 'Slide0',
 }
 
 export default (state = defaultState, action) => {
@@ -12,6 +13,12 @@ export default (state = defaultState, action) => {
       return({...state, tick: state.tick - 1});
     case actions.RESET_TICK:
       return({...state, tick: 0})
+    case actions.SET_SLIDE:
+      return({
+        ...state, 
+        slide: action.slide,
+        tick: action.tick
+      })
     default:
       return state;
   }
